@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <com.cricket.cricketchallenge.custom.TfTextView
+                        android:id="@+id/txtlabelSelectTeam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:text="@string/select_toss"
+                        android:textAlignment="center"
+                        android:textColor="@color/light_purple"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardviewFirstParty"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_10sdp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <View
+                                android:id="@+id/linearStripfirst"
+                                android:layout_width="@dimen/_6sdp"
+                                android:layout_height="match_parent"
+                                android:background="#616161" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_6sdp"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_toRightOf="@id/linearStripfirst"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center|left"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/rbMatchPartyone"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/light_green_alternate"
+                                            android:gravity="center|left"
+                                            android:padding="@dimen/_6sdp"
+                                            android:paddingLeft="@dimen/_8sdp"
+                                            android:text="India"
+                                            android:textColor="@color/textColorPrimary"
+                                            android:textSize="@dimen/_14ssp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardviewSecondParty"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_100sdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_10sdp"
+                        app:cardUseCompatPadding="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <View
+                                android:id="@+id/linearStrip"
+                                android:layout_width="@dimen/_6sdp"
+                                android:layout_height="match_parent"
+                                android:background="#42A5F5" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/_6sdp"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_toRightOf="@id/linearStrip"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center|left"
+                                        android:orientation="horizontal">
+
+                                        <RadioButton
+                                            android:id="@+id/rbMatchPartySecond"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/light_green_alternate"
+                                            android:gravity="center|left"
+                                            android:padding="@dimen/_6sdp"
+                                            android:paddingLeft="@dimen/_8sdp"
+                                            android:text="Pakistan"
+                                            android:textColor="@color/textColorPrimary"
+                                            android:textSize="@dimen/_14ssp"
+                                            android:textStyle="bold" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/_8sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_10sdp"
+                        app:cardUseCompatPadding="true">
+
+                        <RadioGroup
+                            android:id="@+id/rbchallenge"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_6sdp"
+                            android:gravity="center|left"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/rbToss"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/light_green_alternate"
+                                android:gravity="center|left"
+                                android:padding="@dimen/_6sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:text="@string/select_toss"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <RadioButton
+                                android:id="@+id/rbWin"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:buttonTint="@color/light_green_alternate"
+                                android:padding="@dimen/_6sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:text="@string/select_win"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp" />
+
+                            <RadioButton
+                                android:id="@+id/rbManofMatch"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_12sdp"
+                                android:buttonTint="@color/light_green_alternate"
+                                android:gravity="center|left"
+                                android:padding="@dimen/_6sdp"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:text="@string/select_man_of_match"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_14ssp" />
+
+                        </RadioGroup>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <com.cricket.cricketchallenge.custom.TfTextView
+                        android:id="@+id/tv_challnege"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_30sdp"
+                        android:background="@drawable/shadow_btn_orange"
+                        android:gravity="center"
+                        android:padding="@dimen/_10sdp"
+                        android:text="@string/challenge"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp" />
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

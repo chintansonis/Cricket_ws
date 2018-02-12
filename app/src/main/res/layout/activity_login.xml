@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_sign_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:gravity="center|left">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_6sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_8sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_back"
+                android:tint="@color/colorPrimaryDark" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/_80sdp"
+                        android:layout_height="@dimen/_80sdp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/cricketlogo" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.cricket.cricketchallenge.custom.MyEditText
+                            android:id="@+id/et_email_signin"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:background="@drawable/edt_bg"
+                            android:hint="@string/hint_mobile_number"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="12"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/textColorPrimary"
+                            android:textColorHint="@color/dark_gray"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <com.cricket.cricketchallenge.custom.MyEditText
+                            android:id="@+id/et_password_signin"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_marginTop="@dimen/_15sdp"
+                            android:background="@drawable/edt_bg"
+                            android:hint="Password"
+                            android:imeOptions="actionDone"
+                            android:inputType="textPassword"
+                            android:maxLength="10"
+                            android:padding="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/textColorPrimary"
+                            android:textColorHint="@color/dark_gray"
+                            android:textSize="@dimen/_14ssp" />
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:id="@+id/tv_signin_signin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_30sdp"
+                            android:background="@drawable/shadow_btn"
+                            android:gravity="center"
+                            android:padding="@dimen/_10sdp"
+                            android:text="@string/sign_str"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16ssp" />
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:id="@+id/tv_forgot_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="right"
+                            android:text="@string/tv_forgot_password"
+                            android:textAllCaps="false"
+                            android:textColor="@color/light_color_primary"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold"
+                            app:ftype="bold" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:gravity="bottom"
+                    android:orientation="vertical">
+
+                    <com.cricket.cricketchallenge.custom.TfTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:gravity="center"
+                        android:text="@string/tv_not_register"
+                        android:textColor="@color/textColorSecondary"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <com.cricket.cricketchallenge.custom.TfTextView
+                        android:id="@+id/tvRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/_6sdp"
+                        android:text="@string/join_str"
+                        android:textAllCaps="false"
+                        android:textColor="@color/light_color_primary"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        app:ftype="bold" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

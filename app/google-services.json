@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "616958395536",
+    "firebase_url": "https://cricketws-380fc.firebaseio.com",
+    "project_id": "cricketws-380fc",
+    "storage_bucket": "cricketws-380fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616958395536:android:1164026e7e0f9dee",
+        "android_client_info": {
+          "package_name": "com.cricket.cricketchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616958395536-2io8iae9op6o571ruld8i6dsrbbahkbt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cricket.cricketchallenge",
+            "certificate_hash": "0305ca05bbf259480c6420785bd0f165ead2db21"
+          }
+        },
+        {
+          "client_id": "616958395536-ov9s5lncrv2kd1qbiiejg4mm20oi9f5i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjy-5XoOgLqexey2JdFtgRKb7wTxxd90U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "616958395536-ov9s5lncrv2kd1qbiiejg4mm20oi9f5i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

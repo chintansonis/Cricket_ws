@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ld_activityScreenTitles">
+        <item>@string/left_drawer_tv_home</item>
+        <item>@string/left_drawer_tv_pending_challenges</item>
+        <item>@string/left_drawer_tv_requested_challenges</item>
+        <item>@string/left_drawer_tv_accepted_challenges</item>
+        <item>@string/left_drawer_tv_invite_earn</item>
+        <item>@string/left_drawer_tv_how_to_play</item>
+        <item>@string/left_drawer_tv_logout</item>
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/ic_menu_home</item>
+        <item>@drawable/ic_pending</item>
+        <item>@drawable/ic_menu_requested</item>
+        <item>@drawable/ic_menu_accepted_challenges</item>
+        <item>@drawable/ic_menu_earn</item>
+        <item>@drawable/ic_menu_how_to_play</item>
+        <item>@drawable/ic_menu_logout</item>
+    </array>
+
+</resources>

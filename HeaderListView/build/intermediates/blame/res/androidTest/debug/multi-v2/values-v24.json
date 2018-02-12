@@ -1,0 +1,68 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\freelancing\\cricket_ws\\cricket_ws\\HeaderListView\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v24\\values-v24.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\Shriji\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\72e7db41baf05cfc087e7aa5791b2004\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,121,182,248",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "116,177,243,310"
+                    },
+                    "to": {
+                        "startLines": "8,9,10,11",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "619,685,746,812",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "680,741,807,874"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Shriji\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\4ea55ba5587f0b2a04fcf1bc1cd3eb14\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,212,347,416,480,549",
+                        "endColumns": "156,134,68,63,68,69",
+                        "endOffsets": "207,342,411,475,544,614"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\cricket_ws\\HeaderListView\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v24\\values-v24.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\chintans\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\f456dd48324459856da6ec9f1f851bce\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,121,182,248",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "116,177,243,310"
+                    },
+                    "to": {
+                        "startLines": "8,9,10,11",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "619,685,746,812",
+                        "endColumns": "65,60,65,66",
+                        "endOffsets": "680,741,807,874"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\chintans\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\40ecd59b3956daeb37540ad61136a86f\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,212,347,416,480,549",
+                        "endColumns": "156,134,68,63,68,69",
+                        "endOffsets": "207,342,411,475,544,614"
+                    }
+                }
+            ]
+        }
+    ]
+}

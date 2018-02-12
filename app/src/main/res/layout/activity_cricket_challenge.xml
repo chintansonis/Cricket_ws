@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_8sdp"
+                android:orientation="vertical">
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/tv_toss_challenge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/shadow_btn"
+                    android:elevation="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/toss_challenge"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/tv_win_challenge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/shadow_btn_orange"
+                    android:elevation="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/win_challenge"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/tv_man_of_match_challenge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/shadow_btn_green"
+                    android:elevation="@dimen/_12sdp"
+                    android:gravity="center"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/man_of_the_match_challenge"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

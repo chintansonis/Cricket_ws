@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.45"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center|right"
+                android:orientation="horizontal">
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/tvExplore"
+                    android:layout_width="@dimen/_70sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_margin="@dimen/_6sdp"
+                    android:background="@drawable/bg_btn"
+                    android:gravity="center"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/explore_str"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    app:ftype="regular" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="top|center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/cricketlogo" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_25sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:layout_weight="0.7"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_weight="0.7"
+            android:gravity="center|bottom"
+            android:orientation="horizontal">
+
+
+            <com.cricket.cricketchallenge.custom.TfTextView
+                android:id="@+id/tv_join"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_weight="1"
+                android:background="@drawable/shadow_btn"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/join_str"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:ftype="bold" />
+
+            <View
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="wrap_content" />
+
+
+            <com.cricket.cricketchallenge.custom.TfTextView
+                android:id="@+id/tv_signin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_weight="1"
+                android:background="@drawable/shadow_btn"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/sign_str"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:ftype="bold" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

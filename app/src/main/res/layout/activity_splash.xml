@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cricketbg"
+    tools:context="com.cricket.cricketchallenge.ui.SplashActivity">
+<ImageView
+    android:layout_marginTop="@dimen/_12sdp"
+    android:layout_width="@dimen/_100sdp"
+    android:layout_centerHorizontal="true"
+    android:layout_height="@dimen/_100sdp"
+    android:src="@drawable/cricketlogo"
+    />
+    <LinearLayout
+        android:gravity="center|bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgBat"
+            android:layout_centerVertical="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_18sdp"
+            android:layout_width="@dimen/_200sdp"
+            android:src="@drawable/download"
+            android:layout_height="@dimen/_200sdp" />
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

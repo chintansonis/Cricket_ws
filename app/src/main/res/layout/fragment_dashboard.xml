@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical">
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|top"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp"
+                    android:background="@color/colorPrimaryDark"
+                    android:gravity="center|left"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_6sdp"
+                        android:gravity="center|left"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_gift" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:text="Your Points : "
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="normal" />
+
+                        <TextView
+                            android:id="@+id/tvPointsValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center|left"
+                            android:paddingLeft="@dimen/_8sdp"
+                            android:text="50"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14ssp"
+                            android:textStyle="bold
+" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_15sdp"
+                    android:orientation="vertical">
+
+                    <com.cricket.cricketchallenge.custom.TfTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/_8sdp"
+                        android:text="@string/select_challenge"
+                        android:textAlignment="center"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="@dimen/_14ssp"
+                        app:ftype="regular" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_8sdp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="@dimen/_2sdp">
+
+                        <LinearLayout
+                            android:id="@+id/linearCricket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_80sdp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:id="@+id/viewStripItem"
+                                    android:layout_width="@dimen/_6sdp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/colorPrimaryDark" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_65sdp"
+                                    android:layout_height="@dimen/_65sdp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_cricket" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_8sdp">
+
+                                    <com.cricket.cricketchallenge.custom.TfTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:maxLines="2"
+                                        android:text="Cricket Challenge"
+                                        android:textColor="@color/colorPrimaryDark"
+                                        android:textSize="@dimen/_16ssp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="@dimen/_8sdp"
+                        app:cardUseCompatPadding="true"
+                        app:contentPadding="@dimen/_2sdp">
+
+                        <LinearLayout
+                            android:id="@+id/linearTrending"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_80sdp"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="@dimen/_6sdp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/orange" />
+
+                                <ImageView
+                                    android:layout_width="@dimen/_65sdp"
+                                    android:layout_height="@dimen/_65sdp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/ic_trending" />
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center|left"
+                                    android:orientation="vertical"
+                                    android:padding="@dimen/_8sdp">
+
+                                    <com.cricket.cricketchallenge.custom.TfTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:maxLines="2"
+                                        android:text="Trending Challenge"
+                                        android:textColor="@color/orange"
+                                        android:textSize="@dimen/_16ssp"
+                                        android:textStyle="bold" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+</FrameLayout>

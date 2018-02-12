@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_main_drawer"
+    style="@style/ColorDrawerTheme"
+    android:background="@drawable/drawer_gradient_file"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_10sdp" />
+
+    <include
+        layout="@layout/partial_left_drawer_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_bg"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|top"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_home"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:drawableTint="@color/light_green"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_home"
+                    app:ftype="regular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_search"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:drawableTint="@color/light_green"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_pending_challenges"
+                    app:ftype="regular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_rent"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:drawableTint="@color/light_green"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_requested_challenges"
+                    app:ftype="regular" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_shop"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:drawableTint="@color/light_green"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_accepted_challenges"
+                    app:ftype="regular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_invite_earn"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:drawableTint="@color/light_green"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_invite_earn"
+                    app:ftype="regular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_how_to_play"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:drawableTint="@color/light_green"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_how_to_play"
+                    app:ftype="regular" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_logout"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/_15sdp"
+                    android:drawableTint="@color/light_green"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_logout"
+                    app:ftype="regular" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/menuList"
+        android:layout_width="@dimen/_250sdp"
+        android:overScrollMode="never"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_10sdp" />
+
+</LinearLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:padding="@dimen/_16sdp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <FrameLayout
+        android:id="@+id/framePartialProfileLayout"
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="wrap_content"
+        android:clickable="true">
+
+        <RelativeLayout
+            android:layout_gravity="center|right|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imgEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_8sdp"
+                android:tint="@color/white"
+                android:src="@drawable/ic_menu_pencil"
+                />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePic"
+                android:layout_width="@dimen/_70sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:src="@drawable/user_default_pic"
+                app:civ_border_color="@color/app_bg"
+                app:civ_border_width="1dp"
+                app:civ_fill_color="#d5d5d5" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_user_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chintan soni"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    app:ftype="medium" />
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_user_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="9426979314"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_14ssp"
+                    app:ftype="medium" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_gift" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:text="Points : "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="normal"
+                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:paddingLeft="@dimen/_4sdp"
+                        android:text="50"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14ssp"
+                        android:textStyle="normal"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

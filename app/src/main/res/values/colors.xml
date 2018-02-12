@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E3FABA</color>
+    <color name="colorPrimaryDark">#00CA9D</color>
+    <color name="colorAccent">@color/colorPrimary</color>
+    <color name="slide_4">#dcbcce</color>
+    <color name="slide_3">#BACDB0</color>
+    <color name="slide_2">#729B79</color>
+    <color name="slide_1">#475B63</color>
+    <color name="black">#000000</color>
+    <color name="light_green">#86c268</color>
+    <!--<color name="app_bg">#ffffff</color>-->
+    <color name="app_bg">#E3E3E3</color>
+    <color name="orange">#F5A623</color>
+    <color name="light_purple">#5F5D70</color>
+    <color name="dashboard_bg">#F6F6F9</color>
+
+    <!--<color name="app_bg">#fef2e8</color>-->
+    <color name="light_green_alternate">#9CC93A</color>
+    <color name="menu_line_color">#8c000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="dark_gray">#AEADB9</color>
+    <color name="transparent70">#99000000</color>
+    <color name="list_bg">#F6F6F9</color>
+    <color name="light_color_primary">#2CD3AD</color>
+</resources>

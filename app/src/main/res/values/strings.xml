@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">CricketChallenge</string>
+    <string name="header_dashboard">Challenges Type</string>
+    <string name="tutorial_skip">SKIP</string>
+    <string name="tutorial_done">SKIP</string>
+    <string name="line_2_description">Line 2 of this description</string>
+    <string name="browse_wonderful_tut">Browse this wonderful tutorial.</string>
+    <string name="start_up_page">start up page</string>
+    <string name="take_your_medicine_and_be_healthy">this is intro screen.</string>
+    <string name="click_back_to_exit">press back again to exit</string>
+    <string name="left_drawer_tv_home">Home</string>
+    <string name="left_drawer_tv_pending_challenges">Pending Challenges</string>
+    <string name="left_drawer_tv_requested_challenges">Requested Challenges</string>
+    <string name="left_drawer_tv_accepted_challenges">Accepted Challenges</string>
+    <string name="left_drawer_tv_invite_earn">Invite &amp; Earn</string>
+    <string name="left_drawer_tv_how_to_play">How to Play</string>
+    <string name="left_drawer_tv_logout">Logout</string>
+    <string name="menu_noti">notifications</string>
+
+
+    *************Drawer menu*********************
+    <string name="srn_drawer_open">Open</string>
+    <string name="srn_drawer_close">Close</string>
+    <string name="srn_ex_no_menu_view">No view for menu provided. You must either call .withMenuView(View) or pass a valid resource id to .withMenuLayout(int)</string>
+    <string name="srn_ex_bad_content_view">Your content view must contain exactly one child. Make sure you call inject() after setContentView().</string>
+    <string name="join_str">REGISTER</string>
+    <string name="sign_str">SIGN IN</string>
+    <string name="explore_str">Explore</string>
+    <string name="tv_not_register">Not a register  yet?</string>
+    <string name="tv_forgot_password">Forgot password?</string>
+    <string name="hint_mobile_number">mobile number</string>
+    <string name="contentDescription_cancel">Cancel</string>
+    <string name="terms_and_condition_url">https://www.pivotaltracker.com/help/faq</string>
+    <string name="terms_services">Terms and Services</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="select_challenge">Select Type of challenge for your friend</string>
+    <string name="no_data_available">No Data Available.</string>
+    <string name="cricket_challenge">Cricket Challenge</string>
+    <string name="match_challenge">Types of match challenges</string>
+    <string name="toss_challenge">Toss challenge</string>
+    <string name="win_challenge">Win challenge</string>
+    <string name="man_of_the_match_challenge">Man of the match Challenge</string>
+    <string name="select_man_of_match">select your team to challenge your friend for Man of match</string>
+    <string name="select_win">select your team to challenge your friend for Win</string>
+    <string name="select_toss">select your team to challenge your friend for Toss</string>
+    <string name="challenge">Challenge</string>
+    //live
+    <!--<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--<string name="interstial_ad_unit_id">ca-app-pub-8909162348129083/5242923366</string>-->
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ppl_already_using_cricketchalleneg">People already using Cricket Challenge</string>
+    <string name="get_them_on_board">Get them on board!</string>
+    <string name="search_contacts">Search Contacts</string>
+    <string name="challenge_successfully">Challenge successfully sent to your friends.</string>
+    <string name="err_enter_mobile">Please enter mobile number.</string>
+    <string name="err_enter_password">Please enter password.</string>
+    <string name="err_enter_valid_mobile">Please enter valid mobile number.</string>
+    <string name="err_password_validation">Password should be minimum 6 characters.</string>
+    <string name="go_to_home">Go to home</string>
+
+
+</resources>

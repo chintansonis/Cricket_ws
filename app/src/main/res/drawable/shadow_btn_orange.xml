@@ -1,0 +1,9 @@
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/shadow"/>
+    <item
+        android:drawable="@drawable/bg_round_btn_orange"
+        android:bottom="6px" />
+
+</layer-list>

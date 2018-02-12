@@ -1,0 +1,116 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardviewMatchList"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="@dimen/_6sdp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linearStrip"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"
+                android:orientation="horizontal">
+
+                <com.cricket.cricketchallenge.custom.TfTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="22 \n Feb \n 2017"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_6sdp"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_toRightOf="@id/linearStrip"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="India"
+                            android:textColor="@color/light_color_primary"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            app:ftype="bold" />
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_8sdp"
+                            android:layout_marginRight="@dimen/_8sdp"
+                            android:background="@color/colorPrimaryDark"
+                            android:padding="@dimen/_4sdp"
+                            android:text="v/s"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            android:textStyle="normal" />
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pakistan"
+                            android:textColor="@color/light_color_primary"
+                            android:textSize="@dimen/_16ssp"
+                            android:textStyle="bold"
+                            app:ftype="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="01:00 PM to 07:00 PM"
+                            android:textColor="@color/light_purple"
+                            android:textSize="@dimen/_14ssp"
+                            app:ftype="regular"
+
+                            />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

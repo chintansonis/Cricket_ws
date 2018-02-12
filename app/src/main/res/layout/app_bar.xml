@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@android:color/white"
+    android:title=""
+    android:elevation="@dimen/_8sdp"
+    app:popupTheme="@style/AppTheme.PopupOverlay"
+    app:theme="@style/AppTheme.AppBarOverlay">
+    <!--android:background="#FEFEFE"-->
+
+    <com.cricket.cricketchallenge.custom.TfTextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18ssp"
+        app:ftype="semibold" />
+
+</android.support.v7.widget.Toolbar>

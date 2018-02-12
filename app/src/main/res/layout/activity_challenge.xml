@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_contacts"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.cricket.cricketchallenge.custom.MyEditText
+                        android:id="@+id/et_search_add_invite"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_35sdp"
+                        android:background="@drawable/edt_bg"
+                        android:gravity="center"
+                        android:hint="@string/search_contacts"
+                        android:imeOptions="actionDone"
+                        android:padding="@dimen/_10sdp"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:singleLine="true"
+                        android:textAllCaps="false"
+                        android:textColor="@color/light_purple"
+                        android:textSize="@dimen/_14ssp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:src="@drawable/ic_search" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_list_add_invite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:fadingEdge="none"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lvMyContacts"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fadingEdge="none"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:visibility="gone"></LinearLayout>
+
+
+        <com.cricket.cricketchallenge.custom.TfTextView
+            android:id="@+id/tv_no_prev"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="No Preview"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center">
+
+            <com.cricket.cricketchallenge.custom.TfTextView
+                android:id="@+id/tv_challnege"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/challenge"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
