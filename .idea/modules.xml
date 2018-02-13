@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cricket_ws.iml" filepath="$PROJECT_DIR$/Cricket_ws.iml" />
       <module fileurl="file://$PROJECT_DIR$/HeaderListView/HeaderListView.iml" filepath="$PROJECT_DIR$/HeaderListView/HeaderListView.iml" />
+      <module fileurl="file://D:\CRICKET_FEBRUARY_WOKSPACE\Cricket_ws\HeaderListView\HeaderListView.iml" filepath="D:\CRICKET_FEBRUARY_WOKSPACE\Cricket_ws\HeaderListView\HeaderListView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cricket_ws.iml" filepath="$PROJECT_DIR$/cricket_ws.iml" />
+      <module fileurl="file://D:\CRICKET_FEBRUARY_WOKSPACE\Cricket_ws\app\app.iml" filepath="D:\CRICKET_FEBRUARY_WOKSPACE\Cricket_ws\app\app.iml" />
+      <module fileurl="file://D:\CRICKET_FEBRUARY_WOKSPACE\Cricket_ws\cricket_ws.iml" filepath="D:\CRICKET_FEBRUARY_WOKSPACE\Cricket_ws\cricket_ws.iml" />
     </modules>
   </component>
 </project>
