@@ -11,8 +11,14 @@ import java.util.ArrayList;
 public class AppConstants {
     public static final String INTENT_EXTRA_BUTTON_CLICK = "Intent_extra_button_click";
     public static final int loginClick = 0;
+    private static final String BASE_HOST = String.format("%s", "http://cricket.webadmin.rocks/index.php/api/");
     public static final int CONTACT_PERMISSION_CODE=12345;
     public static final int getStartedClick = 1;
+    public static boolean ResponseSuccess=true;
+
+    public static String getBaseHost() {
+        return BASE_HOST;
+    }
     public static String COLORS_PRIMARY[] = {"#90CAF9", "#FFCC80", "#FFAB91", "#9E9E9E"};
     public static String COLORS_PRIMARYDARK[] = {"#42A5F5", "#FFA726", "#FF7043", "#616161"};
     public static final String DB_NAME = "db_cricketchallenge";

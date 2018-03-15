@@ -58,6 +58,10 @@
     <string name="err_enter_valid_mobile">Please enter valid mobile number.</string>
     <string name="err_password_validation">Password should be minimum 6 characters.</string>
     <string name="go_to_home">Go to home</string>
+    <string name="match_list">List of Matches</string>
+    <string name="err_no_internet_connection">No internet connection.</string>
+    <string name="err_something_went_wrong">Something went wrong</string>
+    <string name="msg_please_wait">Please wait</string>
 
 
 </resources>

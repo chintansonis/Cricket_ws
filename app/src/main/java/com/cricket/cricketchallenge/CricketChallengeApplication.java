@@ -2,9 +2,8 @@ package com.cricket.cricketchallenge;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
 
-import com.cricket.cricketchallenge.utils.AppDebug;
+import com.cricket.cricketchallenge.api.RestClient;
 
 /**
  * Created by chintans on 29-11-2017.
@@ -17,8 +16,8 @@ public class CricketChallengeApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        context = this;
         mInstance = this;
+        RestClient.setupRestClient();
         /*Fabric.with(this, new Crashlytics());*/
         /*if (!new AppDebug().isDebuggable(this)) {
             Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {

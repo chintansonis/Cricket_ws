@@ -1,5 +1,6 @@
 package com.cricket.cricketchallenge.ui;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +27,7 @@ import java.util.Stack;
 public class BaseActivity extends AppCompatActivity {
     private Stack<Fragment> fragmentBackStack;
     public int screenWidth, screenHeight;
+    private ProgressDialog dialog;
     public static final int POS_HOME = 0;
     public static final int POS_PENDING_CHALLENGES = 1;
     public static final int POS_REQUESTED_CHALLENGES = 2;
@@ -189,4 +191,21 @@ public class BaseActivity extends AppCompatActivity {
         screenHeight = displaymetrics.heightPixels;
         screenWidth = displaymetrics.widthPixels;
     }
+    public void showProgressDialog(boolean isCancelable) {
+        if (dialog != null && dialog.isShowing()) {
+            dialog.dismiss();
+        }
+        dialog = new ProgressDialog(this);
+        dialog.setMessage(context.getString(R.string.msg_please_wait));
+        dialog.setCancelable(isCancelable);
+        dialog.show();
+    }
+
+    public void hideProgressDialog() {
+        if (dialog != null) {
+            dialog.dismiss();
+        }
+    }
+
+
 }
