@@ -1,6 +1,7 @@
 package com.cricket.cricketchallenge.ui;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -26,7 +27,8 @@ import retrofit2.Response;
  * Created by chintans on 14-12-2017.
  */
 
-public class MatchListActivity extends BaseActivity {
+public class MatchListActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener{
+    private android.support.v4.widget.SwipeRefreshLayout swipeContainer;
     private android.support.v7.widget.RecyclerView rvTrending;
     private com.cricket.cricketchallenge.custom.TfTextView txtNoData;
     private Toolbar toolbar;
@@ -52,6 +54,9 @@ public class MatchListActivity extends BaseActivity {
                                                     @Override
                                                     public void onResponse(Call<List<ResponseMatchList>> call, Response<List<ResponseMatchList>> response) {
                                                         hideProgressDialog();
+                                                        if (swipeContainer.isRefreshing()) {
+                                                            swipeContainer.setRefreshing(false);
+                                                        }
                                                         if (response.body() != null) {
                                                             if (response.body().get(0).getStatus() == AppConstants.ResponseSuccess) {
                                                                 matchDetailArrayList.addAll(response.body().get(0).getData());
@@ -66,37 +71,26 @@ public class MatchListActivity extends BaseActivity {
 
                                                     @Override
                                                     public void onFailure(Call<List<ResponseMatchList>> call, Throwable t) {
+                                                        if (swipeContainer.isRefreshing()) {
+                                                            swipeContainer.setRefreshing(false);
+                                                        }
                                                         hideProgressDialog();
                                                         Functions.showToast(MatchListActivity.this, getString(R.string.err_something_went_wrong));
                                                     }
                                                 });
-        /*RestClient.get().getMatchList().enqueue(new Callback<ResponseMatchList>() {
-            @Override
-            public void onResponse(Call<ResponseMatchList> call, Response<ResponseMatchList> response) {
-                hideProgressDialog();
-                if (response.body() != null) {
-                    if (response.body().getStatus() == AppConstants.ResponseSuccess) {
-                        matchDetailArrayList.addAll(response.body().getData());
-                        matchListAdapter.addAll(matchDetailArrayList);
-                    } else {
-                        Functions.showToast(MatchListActivity.this, response.body().getMessage());
-                    }
-                } else {
-                    Functions.showToast(MatchListActivity.this, getString(R.string.err_something_went_wrong));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ResponseMatchList> call, Throwable t) {
-
-            }
-        });*/
 
     }
 
     private void init() {
         txtNoData = (TfTextView) findViewById(R.id.txtNoData);
         rvTrending = (RecyclerView) findViewById(R.id.rvTrending);
+        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
+        swipeContainer.setRefreshing(false);
+        swipeContainer.setOnRefreshListener(this);
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
         initToolbar();
         setAdapter();
     }
@@ -135,5 +129,15 @@ public class MatchListActivity extends BaseActivity {
     private void doFinish() {
         finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
+    @Override
+    public void onRefresh() {
+        if (Functions.isConnected(MatchListActivity.this)) {
+            getMAtchListApi();
+        } else {
+            swipeContainer.setRefreshing(false);
+            Functions.showToast(MatchListActivity.this, getResources().getString(R.string.err_no_internet_connection));
+        }
     }
 }

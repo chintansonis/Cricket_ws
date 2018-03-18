@@ -11,11 +11,12 @@ import com.cricket.cricketchallenge.helper.Functions;
  */
 
 public class LoginLandingActivity extends BaseActivity implements View.OnClickListener {
-
+ public static LoginLandingActivity loginLandingActivity;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_landing);
+        loginLandingActivity=this;
         init();
     }
 

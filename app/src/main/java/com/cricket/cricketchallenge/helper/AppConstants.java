@@ -14,6 +14,7 @@ public class AppConstants {
     private static final String BASE_HOST = String.format("%s", "http://cricket.webadmin.rocks/index.php/api/");
     public static final int CONTACT_PERMISSION_CODE=12345;
     public static final int getStartedClick = 1;
+    public static final String DEFAULT_STRING = "";
     public static boolean ResponseSuccess=true;
 
     public static String getBaseHost() {

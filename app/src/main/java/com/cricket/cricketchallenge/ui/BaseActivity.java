@@ -10,11 +10,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.view.Gravity;
 
 import com.cricket.cricketchallenge.R;
+import com.cricket.cricketchallenge.api.responsepojos.UserModel;
+import com.cricket.cricketchallenge.custom.TfTextView;
 import com.cricket.cricketchallenge.custom.navigationDrawer.SlidingRootNav;
 import com.cricket.cricketchallenge.fragment.BaseFragment;
+import com.cricket.cricketchallenge.fragment.DashBoardFragment;
+import com.cricket.cricketchallenge.fragment.PendingFragment;
 import com.cricket.cricketchallenge.helper.Functions;
 
 import java.util.Stack;
@@ -35,6 +38,7 @@ public class BaseActivity extends AppCompatActivity {
     public static final int POS_INVITE_EARN = 4;
     public static final int POS_HOW_TO_PLAY = 5;
     public static final int POS_LOGOUT = 6;
+    protected UserModel userDetails;
 
     private boolean showBackMessage = true;
     private Context context;
@@ -119,8 +123,8 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (drawerLayout != null && drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-            drawerLayout.closeDrawers();
+        if (slidingRootNav != null) {
+            slidingRootNav.closeMenu();
             return;
         }
         if (fragmentBackStack.size() <= 1) {
@@ -133,21 +137,22 @@ public class BaseActivity extends AppCompatActivity {
         } else {
             if (!((BaseFragment) fragmentBackStack.get(fragmentBackStack.size() - 1)).onFragmentBackPress()) {
                 Fragment currentFragment = fragmentBackStack.get(fragmentBackStack.size() - 1);
-                /*if (currentFragment instanceof NewsFragment) {
-                    loadHomeFragment();
-                } else if (currentFragment instanceof AnnounceMentFragment) {
-                    loadHomeFragment();
-                } else if (currentFragment instanceof EventFragment) {
-                    loadHomeFragment();
-                } else if (currentFragment instanceof ArtistsFragment) {
+                if (currentFragment instanceof PendingFragment) {
                     loadHomeFragment();
                 } else if (currentFragment instanceof DashBoardFragment) {
                     doubleTapOnBackPress();
-                } else {*/
-                popFragments(true);
-                /*}*/
+                } else {
+                    popFragments(true);
+                }
             }
         }
+    }
+
+    private void loadHomeFragment() {
+        setHeaderTitle(getString(R.string.header_dashboard));
+        getFragments().clear();
+        Fragment fragmentToPush = DashBoardFragment.getFragment(this);
+        pushAddFragments(fragmentToPush, true, true);
     }
 
     /**
@@ -191,6 +196,7 @@ public class BaseActivity extends AppCompatActivity {
         screenHeight = displaymetrics.heightPixels;
         screenWidth = displaymetrics.widthPixels;
     }
+
     public void showProgressDialog(boolean isCancelable) {
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
@@ -207,5 +213,8 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void setHeaderTitle(String title) {
+        ((TfTextView) findViewById(R.id.txtTitle)).setText(title);
+    }
 
 }

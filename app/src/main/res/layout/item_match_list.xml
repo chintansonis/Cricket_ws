@@ -54,23 +54,26 @@
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <com.cricket.cricketchallenge.custom.TfTextView
                             android:id="@+id/txtTeam1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="India"
-                            android:textColor="@color/light_color_primary"
-                            android:textSize="@dimen/_16ssp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
                             android:textStyle="bold"
                             app:ftype="bold" />
 
                         <com.cricket.cricketchallenge.custom.TfTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_marginLeft="@dimen/_8sdp"
                             android:layout_marginRight="@dimen/_8sdp"
+                            android:layout_marginTop="@dimen/_8sdp"
                             android:background="@color/colorPrimaryDark"
                             android:padding="@dimen/_4sdp"
                             android:text="v/s"
@@ -83,8 +86,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pakistan"
-                            android:textColor="@color/light_color_primary"
-                            android:textSize="@dimen/_16ssp"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
                             android:textStyle="bold"
                             app:ftype="bold" />
                     </LinearLayout>
@@ -100,6 +104,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="center"
+                            android:singleLine="true"
                             android:text="01:00 PM to 07:00 PM"
                             android:textColor="@color/light_purple"
                             android:textSize="@dimen/_14ssp"

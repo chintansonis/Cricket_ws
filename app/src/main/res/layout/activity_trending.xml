@@ -15,7 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_2sdp">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rvTrending"
             android:layout_width="match_parent"
@@ -23,6 +27,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:overScrollMode="never"
             android:scrollbars="none" />
+        </android.support.v4.widget.SwipeRefreshLayout>
 
         <com.cricket.cricketchallenge.custom.TfTextView
             android:id="@+id/txtNoData"

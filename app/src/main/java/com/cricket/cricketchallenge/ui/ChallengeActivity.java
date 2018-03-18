@@ -1,7 +1,6 @@
 package com.cricket.cricketchallenge.ui;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,12 +18,15 @@ import android.widget.LinearLayout;
 import com.applidium.headerlistview.HeaderListView;
 import com.applidium.headerlistview.SectionAdapter;
 import com.cricket.cricketchallenge.R;
-import com.cricket.cricketchallenge.commonmodel.ContactModel;
+import com.cricket.cricketchallenge.api.RestClient;
+import com.cricket.cricketchallenge.api.responsepojos.ResponseAppUser;
+import com.cricket.cricketchallenge.api.responsepojos.UserModel;
 import com.cricket.cricketchallenge.commonmodel.DbContactsModel;
 import com.cricket.cricketchallenge.commonmodel.MobileContact;
 import com.cricket.cricketchallenge.custom.MyEditText;
 import com.cricket.cricketchallenge.custom.TfTextView;
 import com.cricket.cricketchallenge.database.TableContacts;
+import com.cricket.cricketchallenge.helper.AppConstants;
 import com.cricket.cricketchallenge.helper.Functions;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -37,6 +38,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by chintans on 15-12-2017.
@@ -48,7 +52,7 @@ public class ChallengeActivity extends BaseActivity {
     private android.widget.ImageView ivSearch;
     private android.widget.LinearLayout lllistaddinvite;
     private android.widget.LinearLayout lvMyContacts;
-    public ArrayList<ContactModel> contactPojoArrayList = new ArrayList<>();
+    public ArrayList<UserModel> contactPojoArrayList = new ArrayList<>();
     private HeaderListView headerlist;
     private List<MobileContact> mobileContacts;
     private LayoutInflater mInflater;
@@ -62,17 +66,40 @@ public class ChallengeActivity extends BaseActivity {
         setContentView(R.layout.activity_challenge);
         updateContactArrayList();
         init();
+        if (Functions.isConnected(ChallengeActivity.this)) {
+            getAppUserListApi();
+        } else {
+            Functions.showToast(ChallengeActivity.this, getResources().getString(R.string.err_no_internet_connection));
+        }
+    }
+
+    private void getAppUserListApi() {
+        showProgressDialog(false);
+        RestClient.get().getAppUsersList().enqueue(new Callback<List<ResponseAppUser>>() {
+            @Override
+            public void onResponse(Call<List<ResponseAppUser>> call, Response<List<ResponseAppUser>> response) {
+                hideProgressDialog();
+                if (response.body() != null) {
+                    if (response.body().get(0).getStatus() == AppConstants.ResponseSuccess) {
+                        contactPojoArrayList.addAll(response.body().get(0).getData());
+                        setData(false);
+                    } else {
+                        Functions.showToast(ChallengeActivity.this, response.body().get(0).getMessage());
+                    }
+                } else {
+                    Functions.showToast(ChallengeActivity.this, getString(R.string.err_something_went_wrong));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<ResponseAppUser>> call, Throwable t) {
+                hideProgressDialog();
+                Functions.showToast(ChallengeActivity.this, getString(R.string.err_something_went_wrong));
+            }
+        });
     }
 
     private void updateContactArrayList() {
-        ContactModel contactModel = null;
-        for (int i = 0; i < 10; i++) {
-            contactModel = new ContactModel();
-            contactModel.setContact_First_Name("test user");
-            contactModel.setContact_Mobile("942165616161");
-            contactModel.setContact_Last_Name("chintan");
-            contactPojoArrayList.add(contactModel);
-        }
         TableContacts tbContacts = new TableContacts(ChallengeActivity.this);
         List<DbContactsModel> dbContactsModels = tbContacts.getAllContacts();
         mobileContacts = new ArrayList<>();
@@ -107,7 +134,7 @@ public class ChallengeActivity extends BaseActivity {
         etsearchaddinvite = (MyEditText) findViewById(R.id.et_search_add_invite);
         //loadAd();
         initToolbar();
-        setData(false);
+
         etsearchaddinvite.addTextChangedListener(new TextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -136,7 +163,7 @@ public class ChallengeActivity extends BaseActivity {
         etsearchaddinvite.setGravity(Gravity.CENTER);
         ivSearch.setVisibility(View.VISIBLE);
         if (Searchtext.length() == 0) {
-            Functions.hideKeyPad(ChallengeActivity.this,etsearchaddinvite);
+            Functions.hideKeyPad(ChallengeActivity.this, etsearchaddinvite);
             setData(false);
         } else {
             etsearchaddinvite.setGravity(Gravity.LEFT | Gravity.CENTER);
@@ -204,8 +231,8 @@ public class ChallengeActivity extends BaseActivity {
                             viewHolder.datumContact = contactPojoArrayList.get(row);
                             viewHolder.iv_right_icon_add_invite.setImageResource(viewHolder.datumContact.isChecked() ? R.drawable.right_icon_contact : R.drawable.roun_cheqbox);
                             /*imageloader1.displayImage(Constants.IMAGE_URL + contactPojoArrayList.get(row).getImagePath().replace("~", "").trim(), viewHolder.iv_pic_add_invite, options55);*/
-                            viewHolder.tv_name_add_invite.setText(contactPojoArrayList.get(row).getContact_First_Name() + " " + contactPojoArrayList.get(row).getContact_Last_Name());
-                            viewHolder.tv_no_add_invite.setText(contactPojoArrayList.get(row).getContact_Mobile());
+                            viewHolder.tv_name_add_invite.setText(contactPojoArrayList.get(row).getUserFullname());
+                            viewHolder.tv_no_add_invite.setText(contactPojoArrayList.get(row).getUserMobile());
                             viewHolder.tv_name_add_invite.setTag(viewHolder.datumContact);
                             viewHolder.llRowDetail.setVisibility(View.VISIBLE);
                             viewHolder.tvRowNoPrev.setVisibility(View.GONE);
@@ -341,7 +368,7 @@ public class ChallengeActivity extends BaseActivity {
                     LinearLayout llRowDetail;
                     TfTextView tvRowNoPrev;
                     ImageView iv_right_icon_add_invite;
-                    ContactModel datumContact;
+                    UserModel datumContact;
                     MobileContact mobileContact;
                 }
 
@@ -428,7 +455,7 @@ public class ChallengeActivity extends BaseActivity {
     }
 
     private void doFinish() {
-        Functions.hideKeyPad(ChallengeActivity.this,etsearchaddinvite);
+        Functions.hideKeyPad(ChallengeActivity.this, etsearchaddinvite);
         finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }

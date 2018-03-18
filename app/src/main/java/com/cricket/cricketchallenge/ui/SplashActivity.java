@@ -3,14 +3,16 @@ package com.cricket.cricketchallenge.ui;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.cricket.cricketchallenge.R;
-import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
+import com.cricket.cricketchallenge.helper.Functions;
+import com.cricket.cricketchallenge.helper.Preferences;
 
 public class SplashActivity extends AppCompatActivity {
     private ImageView imgBat;
@@ -22,10 +24,22 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
         imgBat = (ImageView) findViewById(R.id.imgBat);
         animation();
+        int READ_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE);
+        int WRITE_EXTERNAL_STORAGE = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int READ_SMS = ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_SMS);
+        int RECEIVE_SMS = ContextCompat.checkSelfPermission(this, android.Manifest.permission.RECEIVE_SMS);
+
+        if (READ_EXTERNAL_STORAGE == PackageManager.PERMISSION_GRANTED &&
+                WRITE_EXTERNAL_STORAGE == PackageManager.PERMISSION_GRANTED &&
+                READ_SMS == PackageManager.PERMISSION_GRANTED &&
+                RECEIVE_SMS == PackageManager.PERMISSION_GRANTED) {
+
+        }
+
+
     }
 
     private void animation() {
@@ -52,8 +66,14 @@ public class SplashActivity extends AppCompatActivity {
                     imgBat.setImageResource(R.drawable.download3);
                     counter(4);
                 } else if (count == 4) {
-                    startActivity(new Intent(getApplicationContext(), StartUpActivity.class));
-                    finish();
+                    if (Preferences.getInstance(SplashActivity.this).getBoolean(Preferences.KEY_IS_AUTO_LOGIN)) {
+                        Functions.fireIntent(SplashActivity.this, DashboardActivity.class);
+                        finish();
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), LoginLandingActivity.class));
+                        finish();
+                    }
                 }
             }
         };

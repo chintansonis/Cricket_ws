@@ -9,6 +9,8 @@
     <color name="slide_1">#475B63</color>
     <color name="black">#000000</color>
     <color name="light_green">#86c268</color>
+    <color name="chatbg">#F1F2F3</color>
+    <color name="red">#D22228</color>
     <!--<color name="app_bg">#ffffff</color>-->
     <color name="app_bg">#E3E3E3</color>
     <color name="orange">#F5A623</color>

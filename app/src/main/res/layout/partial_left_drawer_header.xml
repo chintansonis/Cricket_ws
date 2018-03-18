@@ -16,6 +16,7 @@
 
         <RelativeLayout
             android:layout_gravity="center|right|top"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <ImageView
@@ -34,6 +35,7 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profilePic"
+                android:visibility="gone"
                 android:layout_width="@dimen/_70sdp"
                 android:layout_height="@dimen/_70sdp"
                 android:src="@drawable/user_default_pic"
@@ -53,7 +55,6 @@
                     android:id="@+id/left_drawer_tv_user_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Chintan soni"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14ssp"
                     app:ftype="medium" />
@@ -62,7 +63,6 @@
                     android:id="@+id/left_drawer_tv_user_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="9426979314"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_14ssp"
                     app:ftype="medium" />
@@ -77,26 +77,17 @@
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_gift" />
 
-                    <TextView
+                    <com.cricket.cricketchallenge.custom.TfTextView
+                        android:id="@+id/txtPoints"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="@dimen/_8sdp"
                         android:text="Points : "
                         android:textColor="@color/white"
                         android:textSize="@dimen/_14ssp"
-                        android:textStyle="normal"
+                        app:ftype="regular"
                          />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center|left"
-                        android:paddingLeft="@dimen/_4sdp"
-                        android:text="50"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/_14ssp"
-                        android:textStyle="normal"
-                        />
 
                 </LinearLayout>
 

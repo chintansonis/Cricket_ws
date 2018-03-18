@@ -62,6 +62,13 @@
     <string name="err_no_internet_connection">No internet connection.</string>
     <string name="err_something_went_wrong">Something went wrong</string>
     <string name="msg_please_wait">Please wait</string>
+    <string name="err_please_enter_confirm_pass">Please enter confirm password.</string>
+    <string name="wating_for_otp">Waiting for OTP</string>
+    <string name="otp_verified">Otp Verified</string>
+    <string name="verify">Verify</string>
+    <string name="resemd_otp">Resend Otp</string>
+    <string name="submit">Submit</string>
+    <string name="err_fisrt_name">Please enter first name.</string>
 
 
 </resources>

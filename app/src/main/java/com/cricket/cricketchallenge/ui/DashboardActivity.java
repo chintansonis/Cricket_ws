@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.cricket.cricketchallenge.R;
+import com.cricket.cricketchallenge.api.responsepojos.UserModel;
 import com.cricket.cricketchallenge.custom.TfTextView;
 import com.cricket.cricketchallenge.custom.navigationDrawer.SlidingRootNavBuilder;
 import com.cricket.cricketchallenge.custom.navigationDrawer.menu.DrawerAdapter;
@@ -29,8 +30,12 @@ import com.cricket.cricketchallenge.custom.navigationDrawer.menu.DrawerItem;
 import com.cricket.cricketchallenge.custom.navigationDrawer.menu.SimpleItem;
 import com.cricket.cricketchallenge.custom.navigationDrawer.menu.SpaceItem;
 import com.cricket.cricketchallenge.fragment.DashBoardFragment;
+import com.cricket.cricketchallenge.fragment.PendingFragment;
 import com.cricket.cricketchallenge.helper.AppConstants;
+import com.cricket.cricketchallenge.helper.Functions;
+import com.cricket.cricketchallenge.helper.Preferences;
 import com.cricket.cricketchallenge.services.SyncContactsService;
+import com.google.gson.Gson;
 
 import java.util.Arrays;
 
@@ -44,7 +49,10 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
     private static DashboardActivity dashboardActivity;
     private Toolbar toolbar;
     public static TfTextView txtTitle;
+    public TfTextView left_drawer_tv_user_name;
+    public TfTextView txtPoints;
     MenuItem pointItem;
+    private TfTextView left_drawer_tv_user_email;
 //First Commit
 
 
@@ -52,9 +60,12 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        dashboardActivity = this;
+        userDetails = new Gson().fromJson(Preferences.getInstance(DashboardActivity.this).getString(Preferences.KEY_USER_MODEL), UserModel.class);
         init();
         initDrawerMenu(savedInstanceState);
         selectItem(0);
+
     }
 
     private void init() {
@@ -65,6 +76,7 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
         } else {
             startContactSync();
         }
+
     }
 
     private void setPermission() {
@@ -120,7 +132,7 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
         screenTitles = loadScreenTitles();
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
-                createItemFor(POS_HOME).setChecked(true),
+                createItemFor(POS_HOME),
                 new SpaceItem(1),
                 createItemFor(POS_PENDING_CHALLENGES),
                 new SpaceItem(1),
@@ -139,6 +151,12 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
         list.setNestedScrollingEnabled(false);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
+        left_drawer_tv_user_name = (TfTextView) findViewById(R.id.left_drawer_tv_user_name);
+        txtPoints = (TfTextView) findViewById(R.id.txtPoints);
+        left_drawer_tv_user_name.setText(userDetails.getUserFullname());
+        left_drawer_tv_user_email = (TfTextView) findViewById(R.id.left_drawer_tv_user_email);
+        left_drawer_tv_user_email.setText(userDetails.getUserMobile());
+        txtPoints.setText("Points : " + userDetails.getUserTotalPoints() + "");
         adapter.setSelected(POS_HOME);
     }
 
@@ -196,6 +214,28 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
     @Override
     public void onItemSelected(int position) {
         slidingRootNav.closeMenu();
+        switch (position / 2) {
+            case POS_LOGOUT:
+                logout();
+                break;
+            case POS_HOME:
+                setHeaderTitle(getString(R.string.header_dashboard));
+                selectItem(0);
+                break;
+            case POS_PENDING_CHALLENGES:
+                setHeaderTitle(getString(R.string.left_drawer_tv_pending_challenges));
+                Fragment fragmentToPushFreeOffers = PendingFragment.getFragment(this);
+                pushAddFragments(fragmentToPushFreeOffers, false, true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void logout() {
+        Preferences.getInstance(dashboardActivity).clearAll();
+        Functions.fireIntentWithClearFlagWithWithPendingTransition(DashboardActivity.this, LoginLandingActivity.class);
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
     @Override
@@ -213,9 +253,7 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
         super.onDestroy();
     }
 
-    public static void setHeaderTitle(String title) {
-        txtTitle.setText(title);
-    }
+
 
     public static void setDashboardActivity(DashboardActivity homeActivity) {
         DashboardActivity.dashboardActivity = homeActivity;

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_210sdp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_100sdp"
+                        android:src="@drawable/cricketlogo" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_50sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/llWaitingForOtp"
+                        android:animateLayoutChanges="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:background="@color/colorPrimaryDark"
+                        android:orientation="vertical">
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|right"
+                            android:layout_margin="@dimen/_6sdp"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="@string/wating_for_otp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_14ssp"
+                            app:ftype="regular" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/edtVerify1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_marginRight="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:textColor="@android:color/white" />
+
+                            <EditText
+                                android:id="@+id/edtVerify2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_marginRight="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:textColor="@android:color/white" />
+
+                            <EditText
+                                android:id="@+id/edtVerify3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_marginRight="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:textColor="@android:color/white" />
+
+                            <EditText
+                                android:id="@+id/edtVerify4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_marginRight="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:textColor="@android:color/white" />
+
+                            <EditText
+                                android:id="@+id/edtVerify5"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_8sdp"
+                                android:layout_marginRight="@dimen/_8sdp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:singleLine="true"
+                                android:textColor="@android:color/white" />
+                        </LinearLayout>
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:id="@+id/txtNext"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_6sdp"
+                            android:background="@drawable/bg_round_btn_green"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:padding="@dimen/_8sdp"
+                            android:text="@string/verify"
+                            android:textColor="@color/white"
+                            app:ftype="regular" />
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:id="@+id/txtResendOtp"
+                            android:visibility="gone"
+                            android:layout_width="@dimen/_160sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:background="@drawable/bg_round_btn"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="@string/resemd_otp"
+                            android:textColor="@color/white"
+                            app:ftype="regular" />
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/llOtpVerified"
+                        android:animateLayoutChanges="true"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_30sdp"
+                        android:layout_marginRight="@dimen/_30sdp"
+                        android:orientation="vertical">
+
+                        <com.cricket.cricketchallenge.custom.TfTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|right"
+                            android:layout_margin="@dimen/_6sdp"
+                            android:gravity="center"
+                            android:padding="@dimen/_8sdp"
+                            android:text="@string/otp_verified"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14ssp"
+                            app:ftype="regular" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/_8sdp"
+                            android:padding="@dimen/_8sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_check"
+                            android:tint="@color/green"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_alignParentBottom="true">
+
+
+
+        <LinearLayout
+            android:id="@+id/CountDots"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal" />
+        <com.cricket.cricketchallenge.custom.TfTextView
+            android:id="@+id/txtNextSubmit"
+            android:visibility="gone"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right"
+            android:layout_margin="@dimen/_6sdp"
+            android:background="@drawable/bg_round_btn_orange"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            app:ftype="regular" />
+
+    </FrameLayout>
+
+</RelativeLayout>
