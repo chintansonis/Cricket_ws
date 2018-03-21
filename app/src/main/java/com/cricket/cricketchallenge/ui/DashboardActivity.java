@@ -29,8 +29,10 @@ import com.cricket.cricketchallenge.custom.navigationDrawer.menu.DrawerAdapter;
 import com.cricket.cricketchallenge.custom.navigationDrawer.menu.DrawerItem;
 import com.cricket.cricketchallenge.custom.navigationDrawer.menu.SimpleItem;
 import com.cricket.cricketchallenge.custom.navigationDrawer.menu.SpaceItem;
+import com.cricket.cricketchallenge.fragment.AcceptedListFragment;
 import com.cricket.cricketchallenge.fragment.DashBoardFragment;
 import com.cricket.cricketchallenge.fragment.PendingFragment;
+import com.cricket.cricketchallenge.fragment.RequestedListFragment;
 import com.cricket.cricketchallenge.helper.AppConstants;
 import com.cricket.cricketchallenge.helper.Functions;
 import com.cricket.cricketchallenge.helper.Preferences;
@@ -70,7 +72,7 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
 
     private void init() {
         initToolbar();
-        findViewById(R.id.container).setOnClickListener(this);
+        findViewById(R.id.containerFrame).setOnClickListener(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             startContactSync();
         } else {
@@ -133,6 +135,8 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
 
         DrawerAdapter adapter = new DrawerAdapter(Arrays.asList(
                 createItemFor(POS_HOME),
+                new SpaceItem(1),
+                createItemFor(POS_LEADER_BOARD),
                 new SpaceItem(1),
                 createItemFor(POS_PENDING_CHALLENGES),
                 new SpaceItem(1),
@@ -227,6 +231,19 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
                 Fragment fragmentToPushFreeOffers = PendingFragment.getFragment(this);
                 pushAddFragments(fragmentToPushFreeOffers, false, true);
                 break;
+            case POS_REQUESTED_CHALLENGES:
+                setHeaderTitle(getString(R.string.left_drawer_tv_requested_challenges));
+                Fragment fragmentToRequested = RequestedListFragment.getFragment(this);
+                pushAddFragments(fragmentToRequested, false, true);
+                break;
+            case POS_ACCEPTED_CHALLENGES:
+                setHeaderTitle(getString(R.string.left_drawer_tv_accepted_challenges));
+                Fragment fragmentToAcceptedted = AcceptedListFragment.getFragment(this);
+                pushAddFragments(fragmentToAcceptedted, false, true);
+                break;
+            case POS_LEADER_BOARD:
+                setHeaderTitle(getString(R.string.left_drawer_tv_leader_board_challenges));
+                break;
             default:
                 break;
         }
@@ -241,7 +258,7 @@ public class DashboardActivity extends BaseActivity implements DrawerAdapter.OnI
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.container:
+            case R.id.containerFrame:
                 slidingRootNav.closeMenu();
                 break;
         }

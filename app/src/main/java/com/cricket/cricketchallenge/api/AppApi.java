@@ -21,6 +21,14 @@ public interface AppApi {
     @POST("prediction/pendinglist")
     Call<List<ResponsePending>> getPendingList(@Field("userID") String userID);
 
+    @FormUrlEncoded
+    @POST("prediction/requestedlist")
+    Call<List<ResponsePending>> getRequestedList(@Field("userID") String userID);
+
+    @FormUrlEncoded
+    @POST("prediction/acceptedlist")
+    Call<List<ResponsePending>> getAcceptedList(@Field("userID") String userID);
+
     @POST("matches/list")
     Call<List<ResponseMatchList>> getMatchList();
 

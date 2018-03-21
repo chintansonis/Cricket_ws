@@ -3,6 +3,7 @@
 
     <string-array name="ld_activityScreenTitles">
         <item>@string/left_drawer_tv_home</item>
+        <item>@string/left_drawer_tv_leader_board_challenges</item>
         <item>@string/left_drawer_tv_pending_challenges</item>
         <item>@string/left_drawer_tv_requested_challenges</item>
         <item>@string/left_drawer_tv_accepted_challenges</item>
@@ -13,6 +14,7 @@
 
     <array name="ld_activityScreenIcons">
         <item>@drawable/ic_menu_home</item>
+        <item>@drawable/ic_leader_board</item>
         <item>@drawable/ic_pending</item>
         <item>@drawable/ic_menu_requested</item>
         <item>@drawable/ic_menu_accepted_challenges</item>

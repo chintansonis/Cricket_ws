@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.cricket.cricketchallenge.R;
 import com.cricket.cricketchallenge.adapters.MatchListAdapter;
@@ -61,6 +62,7 @@ public class MatchListActivity extends BaseActivity implements SwipeRefreshLayou
                                                             if (response.body().get(0).getStatus() == AppConstants.ResponseSuccess) {
                                                                 matchDetailArrayList.addAll(response.body().get(0).getData());
                                                                 matchListAdapter.addAll(matchDetailArrayList);
+                                                                checkVisibility(matchDetailArrayList);
                                                             } else {
                                                                 Functions.showToast(MatchListActivity.this, response.body().get(0).getMessage());
                                                             }
@@ -79,6 +81,16 @@ public class MatchListActivity extends BaseActivity implements SwipeRefreshLayou
                                                     }
                                                 });
 
+    }
+
+    private void checkVisibility(ArrayList<MatchDetail> matchDetailArrayList) {
+        if(matchDetailArrayList.size()>0){
+            rvTrending.setVisibility(View.VISIBLE);
+            txtNoData.setVisibility(View.GONE);
+        }else {
+            rvTrending.setVisibility(View.GONE);
+            txtNoData.setVisibility(View.VISIBLE);
+        }
     }
 
     private void init() {

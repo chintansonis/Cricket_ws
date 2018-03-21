@@ -1,11 +1,13 @@
 package com.cricket.cricketchallenge.api.responsepojos;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class UserModel implements Serializable{
+public class UserModel implements Serializable, Comparable<UserModel>{
     public boolean isChecked() {
         return isChecked;
     }
@@ -159,4 +161,8 @@ public class UserModel implements Serializable{
         this.userCreatedDate = userCreatedDate;
     }
 
+    @Override
+    public int compareTo(@NonNull UserModel o) {
+        return (this.userFullname).compareTo(o.userFullname);
+    }
 }

@@ -59,11 +59,10 @@
                             android:layout_height="wrap_content"
                             android:gravity="center|left"
                             android:paddingLeft="@dimen/_8sdp"
-                            android:text="50"
+                            android:text="0"
                             android:textColor="@color/white"
                             android:textSize="@dimen/_14ssp"
-                            android:textStyle="bold
-" />
+ />
 
                     </LinearLayout>
                 </LinearLayout>

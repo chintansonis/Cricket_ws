@@ -15,9 +15,11 @@ import com.cricket.cricketchallenge.R;
 import com.cricket.cricketchallenge.api.responsepojos.UserModel;
 import com.cricket.cricketchallenge.custom.TfTextView;
 import com.cricket.cricketchallenge.custom.navigationDrawer.SlidingRootNav;
+import com.cricket.cricketchallenge.fragment.AcceptedListFragment;
 import com.cricket.cricketchallenge.fragment.BaseFragment;
 import com.cricket.cricketchallenge.fragment.DashBoardFragment;
 import com.cricket.cricketchallenge.fragment.PendingFragment;
+import com.cricket.cricketchallenge.fragment.RequestedListFragment;
 import com.cricket.cricketchallenge.helper.Functions;
 
 import java.util.Stack;
@@ -32,12 +34,13 @@ public class BaseActivity extends AppCompatActivity {
     public int screenWidth, screenHeight;
     private ProgressDialog dialog;
     public static final int POS_HOME = 0;
-    public static final int POS_PENDING_CHALLENGES = 1;
-    public static final int POS_REQUESTED_CHALLENGES = 2;
-    public static final int POS_ACCEPTED_CHALLENGES = 3;
-    public static final int POS_INVITE_EARN = 4;
-    public static final int POS_HOW_TO_PLAY = 5;
-    public static final int POS_LOGOUT = 6;
+    public static final int POS_LEADER_BOARD = 1;
+    public static final int POS_PENDING_CHALLENGES = 2;
+    public static final int POS_REQUESTED_CHALLENGES = 3;
+    public static final int POS_ACCEPTED_CHALLENGES = 4;
+    public static final int POS_INVITE_EARN = 5;
+    public static final int POS_HOW_TO_PLAY = 6;
+    public static final int POS_LOGOUT = 7;
     protected UserModel userDetails;
 
     private boolean showBackMessage = true;
@@ -86,8 +89,7 @@ public class BaseActivity extends AppCompatActivity {
             fragmentBackStack.push(fragment);
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction ft = manager.beginTransaction();
-            Fragment currentFragmentForAdd = fragmentBackStack.get(fragmentBackStack.size() - 1);
-            ft.replace(R.id.container, fragment, String.valueOf(fragmentBackStack.size()));
+            ft.replace(R.id.containerFrame, fragment, String.valueOf(fragmentBackStack.size()));
             ft.commit();
             manager.executePendingTransactions();
         }
@@ -125,7 +127,6 @@ public class BaseActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (slidingRootNav != null) {
             slidingRootNav.closeMenu();
-            return;
         }
         if (fragmentBackStack.size() <= 1) {
             if (showBackMessage) {
@@ -138,6 +139,10 @@ public class BaseActivity extends AppCompatActivity {
             if (!((BaseFragment) fragmentBackStack.get(fragmentBackStack.size() - 1)).onFragmentBackPress()) {
                 Fragment currentFragment = fragmentBackStack.get(fragmentBackStack.size() - 1);
                 if (currentFragment instanceof PendingFragment) {
+                    loadHomeFragment();
+                }else if (currentFragment instanceof RequestedListFragment) {
+                    loadHomeFragment();
+                }else if (currentFragment instanceof AcceptedListFragment) {
                     loadHomeFragment();
                 } else if (currentFragment instanceof DashBoardFragment) {
                     doubleTapOnBackPress();
@@ -155,16 +160,7 @@ public class BaseActivity extends AppCompatActivity {
         pushAddFragments(fragmentToPush, true, true);
     }
 
-    /**
-     * this method load dashboard fragment
-     */
-    /*public void loadHomeFragment() {
-        setHeaderTitle(getString(R.string.tv_home_header_text));
-        loadBottomUI(AppConstants.HOME);
-        getFragments().clear();
-        Fragment fragmentToPush = DashBoardFragment.getFragment(this);
-        pushAddFragments(fragmentToPush, true, true);
-    }*/
+
 
     /**
      * method handle for show notification for close the application & Stop app to Close when there is no any remaining Fragment

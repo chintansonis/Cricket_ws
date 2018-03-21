@@ -72,11 +72,20 @@ public class PendingFragment extends BaseFragment implements SwipeRefreshLayout.
         if (Functions.isConnected(getBaseActivity())) {
             getPendingListApi();
         } else {
+          checkvisibility(pendingObjectArrayList);
             Functions.showToast(getBaseActivity(), getResources().getString(R.string.err_no_internet_connection));
         }
         getBaseActivity().getWidthAndHeight();
     }
-
+    private void checkvisibility(ArrayList<PendingObject> pendingObjectArrayList) {
+        if(pendingObjectArrayList.size()>0){
+            swipeContainer.setVisibility(View.VISIBLE);
+            txtNoData.setVisibility(View.GONE);
+        }else {
+            swipeContainer.setVisibility(View.GONE);
+            txtNoData.setVisibility(View.VISIBLE);
+        }
+    }
     private void getPendingListApi() {
         getBaseActivity().showProgressDialog(false);
         RestClient.get().getPendingList(Preferences.getInstance(getBaseActivity()).getString(Preferences.KEY_USER_ID)).enqueue(new Callback<List<ResponsePending>>() {
@@ -90,10 +99,13 @@ public class PendingFragment extends BaseFragment implements SwipeRefreshLayout.
                     if (response.body().get(0).getStatus() == AppConstants.ResponseSuccess) {
                         pendingObjectArrayList.addAll(response.body().get(0).getData());
                         pendingListAdapter.addAll(pendingObjectArrayList);
+                        checkvisibility(pendingObjectArrayList);
                     } else {
-                        Functions.showToast(getBaseActivity(), response.body().get(0).getMessage());
+                        checkvisibility(pendingObjectArrayList);
+
                     }
                 } else {
+                    checkvisibility(pendingObjectArrayList);
                     Functions.showToast(getBaseActivity(), getString(R.string.err_something_went_wrong));
                 }
             }
@@ -103,6 +115,7 @@ public class PendingFragment extends BaseFragment implements SwipeRefreshLayout.
                 if (swipeContainer.isRefreshing()) {
                     swipeContainer.setRefreshing(false);
                 }
+                checkvisibility(pendingObjectArrayList);
                 getBaseActivity().hideProgressDialog();
                 Functions.showToast(getBaseActivity(), getString(R.string.err_something_went_wrong));
             }

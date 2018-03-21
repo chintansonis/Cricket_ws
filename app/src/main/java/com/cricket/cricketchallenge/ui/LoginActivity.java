@@ -124,6 +124,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     private void onLoginResponse(UserModel userModel) {
         Preferences.getInstance(LoginActivity.this).setString(Preferences.KEY_USER_ID, String.valueOf(userModel.getUserID()));
+        Preferences.getInstance(LoginActivity.this).setString(Preferences.KEY_USER_TOTAL_POINTS, String.valueOf(userModel.getUserTotalPoints()+""));
         Preferences.getInstance(LoginActivity.this).setString(Preferences.KEY_USER_LOGIN_PASS_WORD, etpasswordsignin.getText().toString().trim().trim());
         Preferences.getInstance(LoginActivity.this).setString(Preferences.KEY_USER_LOGIN_MOBILE, etemailsignin.getText().toString().trim().trim());
         Preferences.getInstance(LoginActivity.this).setBoolean(Preferences.KEY_IS_PASSWORD_SET, false);

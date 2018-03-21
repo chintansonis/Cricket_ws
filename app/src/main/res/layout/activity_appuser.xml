@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|top">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top">
+
+                <LinearLayout
+                    android:id="@+id/llSearchContacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_bg"
+                    android:gravity="center|left"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <EditText
+                        android:id="@+id/etSearchContacts"
+                        style="@style/signup_et"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:hint="Search contacts"
+                        android:imeOptions="actionSearch"
+                        android:padding="10dp"
+                        android:singleLine="true"
+                        android:textSize="@dimen/_14ssp" />
+
+                    <com.cricket.cricketchallenge.custom.TfTextView
+                        android:id="@+id/tvCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:text="Cancel"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp" />
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/ivSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:src="@drawable/ic_search" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:padding="@dimen/_2sdp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvTrending"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <com.cricket.cricketchallenge.custom.TfTextView
+            android:id="@+id/txtNoData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_weight="0.8"
+            android:gravity="center"
+            android:text="@string/no_data_available"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_16ssp"
+            android:visibility="gone"
+            app:ftype="regular" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center">
+
+            <com.cricket.cricketchallenge.custom.TfTextView
+                android:id="@+id/tv_challnege"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#D22228"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/challenge"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:ftype="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

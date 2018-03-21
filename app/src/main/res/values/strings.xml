@@ -12,6 +12,7 @@
     <string name="left_drawer_tv_pending_challenges">Pending Challenges</string>
     <string name="left_drawer_tv_requested_challenges">Requested Challenges</string>
     <string name="left_drawer_tv_accepted_challenges">Accepted Challenges</string>
+    <string name="left_drawer_tv_leader_board_challenges">Leader Board Challenges</string>
     <string name="left_drawer_tv_invite_earn">Invite &amp; Earn</string>
     <string name="left_drawer_tv_how_to_play">How to Play</string>
     <string name="left_drawer_tv_logout">Logout</string>
@@ -69,6 +70,7 @@
     <string name="resemd_otp">Resend Otp</string>
     <string name="submit">Submit</string>
     <string name="err_fisrt_name">Please enter first name.</string>
+    <string name="app_user_list">List of App Users</string>
 
 
 </resources>

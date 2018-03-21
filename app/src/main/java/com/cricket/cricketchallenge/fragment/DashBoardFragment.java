@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.cricket.cricketchallenge.R;
+import com.cricket.cricketchallenge.custom.TfTextView;
 import com.cricket.cricketchallenge.helper.Functions;
+import com.cricket.cricketchallenge.helper.Preferences;
 import com.cricket.cricketchallenge.ui.BaseActivity;
 import com.cricket.cricketchallenge.ui.CricketChallengeActivity;
 import com.cricket.cricketchallenge.ui.TrendingChallengesActivity;
@@ -20,6 +23,7 @@ import com.google.android.gms.ads.AdView;
 
 public class DashBoardFragment extends BaseFragment {
     private AdView mAdView;
+    private TextView tvPointsValue;
 
     @SuppressLint({"ValidFragment", "Unused"})
     private DashBoardFragment() {
@@ -55,6 +59,7 @@ public class DashBoardFragment extends BaseFragment {
     }
 
     private void init(View view) {
+        tvPointsValue = view.findViewById(R.id.tvPointsValue);
         view.findViewById(R.id.linearTrending).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +75,8 @@ public class DashBoardFragment extends BaseFragment {
             }
         });
         mAdView = (AdView) view.findViewById(R.id.adView);
+        tvPointsValue.setText(Preferences.getInstance(getBaseActivity()).getString(Preferences.KEY_USER_TOTAL_POINTS));
+
         //loadAd();
     }
 

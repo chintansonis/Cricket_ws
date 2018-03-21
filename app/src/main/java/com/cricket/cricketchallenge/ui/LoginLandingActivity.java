@@ -16,6 +16,7 @@ public class LoginLandingActivity extends BaseActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_landing);
+        setShowBackMessage(false);
         loginLandingActivity=this;
         init();
     }

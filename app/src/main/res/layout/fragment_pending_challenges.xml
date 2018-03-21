@@ -20,6 +20,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:overScrollMode="never"
             android:scrollbars="none" />
+
         </android.support.v4.widget.SwipeRefreshLayout>
         <com.cricket.cricketchallenge.custom.TfTextView
             android:id="@+id/txtNoData"
@@ -27,11 +28,12 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="@string/no_data_available"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_16ssp"
             android:visibility="gone"
+            android:text="@string/no_data_available"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_16ssp"
             app:ftype="regular" />
+
 
     </LinearLayout>
 

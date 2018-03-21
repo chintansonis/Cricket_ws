@@ -32,7 +32,7 @@ public class MatchDetailActivity extends BaseActivity {
         findViewById(R.id.tv_challnege).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Functions.fireIntent(MatchDetailActivity.this, ChallengeActivity.class);
+                Functions.fireIntent(MatchDetailActivity.this, AppUserListActivity.class);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });

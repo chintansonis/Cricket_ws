@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.cricket.cricketchallenge.api.responsepojos.UserModel;
 import com.cricket.cricketchallenge.ui.BaseActivity;
 
 
@@ -12,6 +13,7 @@ import com.cricket.cricketchallenge.ui.BaseActivity;
  */
 
 public class BaseFragment extends Fragment {
+    protected UserModel userDetails;
     protected View view;
     /**
      * The Activity.

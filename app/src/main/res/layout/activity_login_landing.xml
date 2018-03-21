@@ -31,12 +31,12 @@
                     android:layout_width="@dimen/_70sdp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_margin="@dimen/_6sdp"
-                    android:background="@drawable/bg_btn"
+                    android:background="@drawable/bg_cornerradius_btn_green"
                     android:gravity="center"
                     android:padding="@dimen/_4sdp"
                     android:text="@string/explore_str"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="@dimen/_14sdp"
                     app:ftype="regular" />
 
             </LinearLayout>
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
                 android:layout_weight="1"
-                android:background="@drawable/shadow_btn"
+                android:background="@drawable/bg_round_btn"
                 android:gravity="center"
                 android:padding="@dimen/_12sdp"
                 android:text="@string/join_str"
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_10sdp"
                 android:layout_weight="1"
-                android:background="@drawable/shadow_btn"
+                android:background="@drawable/bg_round_btn"
                 android:gravity="center"
                 android:padding="@dimen/_12sdp"
                 android:text="@string/sign_str"
